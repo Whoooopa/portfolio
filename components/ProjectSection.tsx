@@ -3,9 +3,22 @@ import Image from "next/image"
 import Link from "next/link"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs";
 import { SiIeee } from "react-icons/si";
+import { FaPlay } from "react-icons/fa";
 import SlideUp from './SlideUp';
 
 const projects = [
+  {
+    name: "Turtle Gobble", 
+    description: "Play as a turtle, attack enemies and grow bigger!. made with html canvas and vanilla javascript",
+    image: "/turtlegobble.png",
+    links: [
+       {text: "GitHub", url:"https://github.com/Whoooopa/Turtle_Gobble"},
+       {text: "Play", url:"https://whoooopa.github.io/"}
+
+    ],
+    tags: ["Html", "CSS", "Javascript"],
+
+  },
   {
     name: "Chess Piece Image Recognition", 
     description: "I have created a basic Convolutional Neural Network model to classify chess pieces, My group's paper has been accepted and published by AiDAS Conference 2023",
@@ -30,7 +43,7 @@ const projects = [
   },
   {
     name: "M&T Clothing Store", 
-    description: "My first web project during the first year",
+    description: "A website for prodiving trendy fashion style",
     image: "/mt_web3.png",
     links: [
       {text: "GitHub", url:"https://github.com/Whoooopa/HCI"},
@@ -78,6 +91,11 @@ const ProjectSection = () => {
                               />
                             ) : link.text === "Paper" ? (
                               <SiIeee 
+                                size={30}
+                                className='hover:-translate-y-1 hover:scale-125 transition-transform'
+                              />
+                            ) : link.text === "Play" ? (
+                              <FaPlay 
                                 size={30}
                                 className='hover:-translate-y-1 hover:scale-125 transition-transform'
                               />
